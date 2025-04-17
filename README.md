@@ -4,3 +4,4 @@ React Alegro Project
 3. Header X
 4. Footer X
 5. Other Pagex X
+Link on vercel: https://bazarro-swart.vercel.app
