@@ -31,7 +31,7 @@ export const ProductCard = ({
         <Image
           src={imageUrl}
           alt={title}
-          className={`w-full object-cover ${variant === 'small' ? 'h-[150px]' : 'h-[200px]'
+          className={`w-full shrink-0object-cover ${variant === 'small' ? 'h-[150px]' : 'h-[200px]'
             }`}
         />
       </div>
@@ -92,7 +92,7 @@ export const ProductCardList = ({
             <div className="justify-start text-[var(--text-color)] text-3xl font-medium font-['Montserrat'] leading-10">{categoryName}</div>
           </Link>
           <div className="self-stretch px-1 flex flex-col justify-start items-start gap-2.5 overflow-hidden">
-            <div className="self-stretch inline-flex justify-start items-start gap-2 overflow-hidden">
+            <div className="self-stretch inline-flex justify-start items-start gap-2 overflow-hidden w-fit">
               {
                 cards.map((product) => (
                   <ProductCard

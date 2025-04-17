@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} ${lato.className} antialiased flex flex-col items-center justify-center`}
       >
-        <div className="w-[1440px] bg-[var(--page-bg)] inline-flex flex-col justify-start">
+        <div className="w-full max-w-[1440px] bg-[var(--page-bg)] inline-flex flex-col justify-start">
           <div className="self-stretch bg-[var(--page-bg)] border-b-2 border-[var(--border-color)] flex flex-col justify-start items-center overflow-hidden">
             <a target="_blank" href="https://www.thedrum.com/the-worlds-best-ads-all-time" className="justify-start text-border-dark text-3xl font-normal font-['Lato']">Best add placer</a>
           </div>
