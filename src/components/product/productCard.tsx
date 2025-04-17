@@ -75,7 +75,7 @@ export const ProductCardList = ({
 }: { 
   categoryName: string,
   cards: {
-    id: string;
+    id: number;
     variant: "small" | "large";
     price: number;
     currency: "$" | "PLN";
@@ -96,7 +96,7 @@ export const ProductCardList = ({
               {
                 cards.map((product) => (
                   <ProductCard
-                    key={Number(product.id)}
+                    key={product.id}
                     variant="large"
                     price={product.price}
                     currency={product.currency}
