@@ -1,21 +1,32 @@
 'use client'
-import { ProductCard } from "@/components/product/productCard";
+import { ProductCard, ProductCardList } from "@/components/product/productCard";
 import { useEffect, useState } from "react";
 import { getWN } from "@/lib/utils";
 import watch from '../../public/watch.png'
-const products = [{
+import { StaticImageData } from "next/image";
+const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Vivamus egestas ut libero sit amet dictum.Pellentesque.'.split(/ \,|\.|[\b]/)
+console.log(lorem);
+const products: {
+  id: string;
+  variant: "small" | "large";
+  price: number;
+  currency: "$" | "PLN";
+  title: string;
+  deliveryDate: Date;
+  imageUrl: string | StaticImageData;
+}[] = [{
     id: '0',
-    variant : "small",
-    price: 10.99,
+  variant: "large",
+    price: Math.random()*100,
     currency: "$",
-    title: "Best watches id 1",
+  title: lorem.slice(0,5).join(' '),
     deliveryDate: new Date('10.04.2025'),
     imageUrl: watch,
   }, 
   {
     id: '1',
-    variant: "small",
-    price: 10.99,
+    variant: "large",
+    price: Math.random() * 100,
     currency: "$",
     title: "Best watches id 2",
     deliveryDate: new Date('11.04.2025'),
@@ -23,8 +34,8 @@ const products = [{
   }, 
   {
     id: '2',
-    variant: "small",
-    price: 10.99,
+    variant: "large",
+    price: Math.random() * 100,
     currency: "$",
     title: "Good Product",
     deliveryDate: new Date('12.04.2025'),
@@ -32,8 +43,8 @@ const products = [{
   }, 
   {
     id: '3',
-    variant: "small",
-    price: 10.99,
+    variant: "large",
+    price: Math.random() * 100,
     currency: "$",
     title: "Good Product",
     deliveryDate: new Date('10.04.2025'),
@@ -41,8 +52,8 @@ const products = [{
   },
   {
     id: '4',
-    variant: "small",
-    price: 10.99,
+    variant: "large",
+    price: Math.random() * 100,
     currency: "$",
     title: "Good Product",
     deliveryDate: new Date('10.04.2025'),
@@ -50,8 +61,8 @@ const products = [{
   },
   {
     id: '5',
-    variant: "small",
-    price: 10.99,
+    variant: "large",
+    price: Math.random() * 100,
     currency: "$",
     title: "Good Product",
     deliveryDate: new Date('10.04.2025'),
@@ -59,8 +70,8 @@ const products = [{
   },
   {
     id: '6',
-    variant: "small",
-    price: 10.99,
+    variant: "large",
+    price: Math.random() * 100,
     currency: "$",
     title: "Good Product",
     deliveryDate: new Date('10.04.2025'),
@@ -79,29 +90,12 @@ export default function Home() {
     setTimeout(() => console.log(getWN(lang)), 1000);
   }, [lang]);
   return (
-    <div data-color="Light" className=" bg-[var(--elements-bg)] w-full max-w-[1432px] pb-8 bg-gray(page-bg-ligth) inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden">
-      <div className="self-stretch px-2 py-6 bg-white(elements-bg-ligthtext-dark) flex flex-col justify-start items-start gap-2">
-        <div className="self-stretch pb-4 inline-flex justify-start items-center gap-2.5">
-          <div className="justify-start text-balck(page-bg-darktext-ligth) text-3xl font-medium font-['Montserrat'] leading-10">Especially for you</div>
-        </div>
-        <div className="self-stretch px-1 flex flex-col justify-start items-start gap-2.5 overflow-hidden">
-          <div className="self-stretch inline-flex justify-start items-center gap-2 overflow-hidden">
-            {
-              products.map((product) => (
-                <ProductCard
-                  key={Number(product.id)}
-                  variant="large"
-                  price={product.price}
-                  currency={product.currency}
-                  title={product.title}
-                  deliveryDate={''+ weekdays[product.deliveryDate.getDay()] || 'ERROR' }
-                  imageUrl={product.imageUrl}
-                />
-              ))
-            }  
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      <ProductCardList categoryName="Best watches" cards={products} weekdays={weekdays} />
+      <ProductCardList categoryName="Good watches" cards={products} weekdays={weekdays} />
+      <ProductCardList categoryName="Normal watches" cards={products} weekdays={weekdays} />
+      <ProductCardList categoryName="Not best watches" cards={products} weekdays={weekdays} />
+      <ProductCardList categoryName="Worst ever watches" cards={products} weekdays={weekdays} />
+    </>
   );
 }

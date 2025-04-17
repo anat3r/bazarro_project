@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat, Lato} from "next/font/google";
 import "@/styles/globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const lato = Lato({
+  weight: ["100", "300" , "400" , "700" , "900"],
+  variable: "--font-lato",
   subsets: ["latin"],
 });
 
@@ -25,9 +26,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${montserrat.className} ${lato.className} antialiased flex flex-col items-center justify-center`}
       >
-        {children}
+        <div className="w-[1440px] bg-[var(--page-bg)] inline-flex flex-col justify-start">
+          <div className="self-stretch bg-[var(--page-bg)] border-b-2 border-[var(--border-color)] flex flex-col justify-start items-center overflow-hidden">
+            <a target="_blank" href="https://www.thedrum.com/the-worlds-best-ads-all-time" className="justify-start text-border-dark text-3xl font-normal font-['Lato']">Best add placer</a>
+          </div>
+          <div className="self-stretch inline-flex justify-center items-center">
+            <div className="flex-1 max-w-[1440px] py-4 bg-[var(--page-bg)] inline-flex flex-col justify-start items-start overflow-hidden">
+              {children}
+            </div>
+          </div>
+        </div>
       </body>
     </html>
   );

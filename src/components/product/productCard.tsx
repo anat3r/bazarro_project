@@ -1,9 +1,10 @@
 import { HTMLAttributes} from "react";
-import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
+import Image, {  StaticImageData } from "next/image";
 export type ProductCardProps = HTMLAttributes<HTMLDivElement> & {
-  variant?: "small" | "large";
+  variant: "small" | "large";
   price: number;
-  currency: string;
+  currency: "$" | "PLN";
   title: string;
   deliveryDate: string;
   imageUrl: string | StaticImageData;
@@ -22,8 +23,8 @@ export const ProductCard = ({
 
   return (
     <div
-      className={`product-card overflow-hidden inline-flex flex-col items-start justify-center ${variant === 'small' ? 'w-[150px]' : 'w-[200px]'
-        } ${className}`}
+      className={`product-card overflow-hidden h-full flex-col items-start justify-center ${variant === 'small' ? 'w-[150px]' : 'w-[200px]'
+        } ${className ?? ' '}`}
       {...props}
     >
       <div className="w-full inline-flex items-center justify-start">
@@ -35,10 +36,10 @@ export const ProductCard = ({
         />
       </div>
 
-      <div className={`w-full flex flex-col items-start justify-start p-2 ${variant === 'small' ? 'px-2 py-1' : 'px-2 py-1'
+      <Link href='/' className={`w-full flex flex-col h-full grow items-start justify-start p-2 ${variant === 'small' ? 'px-2 py-1' : 'px-2 py-1'
         }`}>
         <div className="w-full inline-flex items-start justify-start gap-1 pb-1">
-          <span className="product-text text-xl font-normal leading-7">
+          <span suppressHydrationWarning={true} className="product-text text-xl font-normal leading-7">
             {price.toFixed(2)}
           </span>
           <span className="product-text text-xl font-normal leading-7">
@@ -56,16 +57,68 @@ export const ProductCard = ({
         <div className="w-full inline-flex items-end justify-between pt-1 pb-1">
           <span className="contrast-text text-[10px] font-normal leading-[14px] ">
             <span>Delivery on </span> 
-            <span className="capitalize"> {deliveryDate} </span>
+            <span suppressHydrationWarning={true} className="capitalize"> {deliveryDate} </span>
           </span>
-          <button className="p-0.5 flex items-center justify-start gap-2.5">
+          <div className="p-0.5 flex items-center justify-start gap-2.5">
             <InfoIcon className="text-[var(--icons-color)]" />
-          </button>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
+
+export const ProductCardList = ({
+  categoryName,
+  cards,
+  weekdays
+}: { 
+  categoryName: string,
+  cards: {
+    id: string;
+    variant: "small" | "large";
+    price: number;
+    currency: "$" | "PLN";
+    title: string;
+    deliveryDate: Date;
+    imageUrl: string | StaticImageData;
+  }[], 
+  weekdays: Array<string> }) =>{
+  return(
+    <div className="w-full max-w-[1440px] px-1 relative inline-flex justify-between items-start">
+      <div data-color="Dark" className="flex-1 max-w-[1432px] pb-8 bg-[var(--page-bg)] inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden">
+        <div className="self-stretch px-2 py-6 bg-[var(--elements-bg)] flex flex-col justify-start items-start gap-2">
+          <Link href ='/' className="self-stretch pb-4 inline-flex justify-start items-center gap-2.5">
+            <div className="justify-start text-[var(--text-color)] text-3xl font-medium font-['Montserrat'] leading-10">{categoryName}</div>
+          </Link>
+          <div className="self-stretch px-1 flex flex-col justify-start items-start gap-2.5 overflow-hidden">
+            <div className="self-stretch inline-flex justify-start items-start gap-2 overflow-hidden">
+              {
+                cards.map((product) => (
+                  <ProductCard
+                    key={Number(product.id)}
+                    variant="large"
+                    price={product.price}
+                    currency={product.currency}
+                    title={product.title}
+                    deliveryDate={'' + weekdays[product.deliveryDate.getDay()] || 'ERROR'}
+                    imageUrl={product.imageUrl}
+                  />
+                ))
+              }  
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="size-10 left-[1436px] top-[242px] absolute origin-top-left rotate-180 opacity-30 bg-elements-bg-dark outline outline-1 outline-offset-[-1px] outline-[var(--border-color)]">
+        <div className="size-6 left-[32px] top-[33px] absolute origin-top-left rotate-180 outline outline-[1.50px] outline-offset-[-0.75px] outline-[var(--border-color)]" />
+      </div>
+    </div>
+  )
+}
+
+
+
 
 const InfoIcon = ({ className }: { className?: string }) => (
   <svg
