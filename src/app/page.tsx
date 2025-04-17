@@ -1,5 +1,5 @@
 'use client'
-import { ProductCard, ProductCardList } from "@/components/product/productCard";
+import { /*ProductCard,*/ ProductCardList } from "@/components/product/productCard";
 import { useEffect, useState } from "react";
 import { getWN } from "@/lib/utils";
 import watch from '../../public/watch.png'
