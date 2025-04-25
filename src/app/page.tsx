@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getWN } from "@/lib/utils";
 import watch from '../../public/watch.png'
 import { StaticImageData } from "next/image";
+import HeaderWrapper from "@/components/header/header";
 const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Vivamus egestas ut libero sit amet dictum.Pellentesque.'.split(/,|\.|\ /).filter((word) => word.length > 1)
 console.log(lorem);
 const products: {
@@ -91,6 +92,7 @@ export default function Home() {
   }, [lang]);
   return (
     <>
+      <HeaderWrapper />
       <ProductCardList categoryName="Best watches" cards={products} weekdays={weekdays} />
       <ProductCardList categoryName="Good watches" cards={products} weekdays={weekdays} />
       <ProductCardList categoryName="Normal watches" cards={products} weekdays={weekdays} />

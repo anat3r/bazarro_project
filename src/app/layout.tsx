@@ -33,9 +33,9 @@ export default function RootLayout({
             <a target="_blank" href="https://www.thedrum.com/the-worlds-best-ads-all-time" className="justify-start text-border-dark text-3xl font-normal font-['Lato']">Best add placer</a>
           </div>
           <div className="self-stretch inline-flex justify-center items-center">
-            <div className="flex-1 max-w-[1440px] py-4 bg-[var(--page-bg)] inline-flex flex-col justify-start items-start overflow-hidden">
+            <main className="flex-1 max-w-[1440px] py-4 bg-[var(--page-bg)] inline-flex flex-col justify-start items-start overflow-hidden">
               {children}
-            </div>
+            </main>
           </div>
         </div>
       </body>
