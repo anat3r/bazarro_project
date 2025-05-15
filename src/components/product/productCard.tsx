@@ -15,7 +15,7 @@ interface ProductCardProps {
 }
 
 // Product Card Component
-export const ProductCard: React.FC<ProductCardProps> = ({
+export default const ProductCard: React.FC<ProductCardProps> = ({
   id,
   variant = 'large',
   price,
@@ -55,5 +55,3 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       </article>
   );
 };
-
-export default ProductCard;
