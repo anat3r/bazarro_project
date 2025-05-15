@@ -40,3 +40,30 @@ Explore the live version:
 - **Build Tool**: Vercel
 
 ## 📦 Project Structure
+src/
+├── app/ # Next.js page routes
+├── components/ # Reusable UI components
+├── hooks/ # Custom hooks
+├── lib/ # Utilities and helpers
+├── styles/ # Global CSS/Tailwind config
+└── types/ # TypeScript definitions
+
+## 🔧 Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/bazarro-project.git
+   ```
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+3. Run development server:
+   ```bash
+   pnpm dev
+   ```
+## 📝 Credentials
+
+Author: Ruslan Bedychev
+
+
