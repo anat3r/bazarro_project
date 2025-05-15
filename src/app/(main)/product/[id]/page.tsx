@@ -15,8 +15,8 @@ interface ProductPageProps {
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const product = await getProduct(params.id);
-  const category = localCapitalize(product.category_id.trim().replace('cat_', '').split('_')[0])
-  const sub_category = localCapitalize(product.category_id.trim().replace('cat_', '').split('_')[1])
+  const category = localCapitalize(product?.category_id?.trim()?.replace('cat_', '')?.split('_')[0] || "Default")
+  const sub_category = localCapitalize(product?.category_id?.trim()?.replace('cat_', '')?.split('_')[1] || "Default")
   if (!product) return notFound();
 
   return (
