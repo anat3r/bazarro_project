@@ -1,16 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard'; // Assuming ProductCard is in the same directory
-import { StaticImageData } from 'next/image';
-// Type definitions
-export interface Product {
-  id: number;
-  variant?: 'small' | 'large';
-  price: number;
-  currency: string;
-  title: string;
-  deliveryDate: Date;
-  imageUrl: string | StaticImageData;
-}
+import { Product } from '@/lib/fake-api/functions';
 
 interface CategoryWrapperProps {
   categoryName: string;
@@ -39,9 +29,9 @@ const CategoryWrapper: React.FC<CategoryWrapperProps> = ({ categoryName, product
         <div className="self-stretch px-1 flex flex-col justify-start items-start gap-2.5 overflow-hidden">
           <div className="self-stretch flex justify-start items-start gap-2 overflow-x-auto pb-4">
             {productsList.map((product) => (
-              <div key={product.id} className="flex-shrink-0">
+              <div key={+product.id} className="flex-shrink-0">
                 <ProductCard
-                  id={product.id}
+                  id={`${product.id}`}
                   variant={variant || 'large'}
                   price={product.price}
                   currency={product.currency}

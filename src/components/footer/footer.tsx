@@ -2,9 +2,8 @@
 import React from 'react';
 import { MoonIcon, LogoIcon } from '@/components/iconsSVG/icons';
 import Link from 'next/link';
-import { use } from 'react';
 import { localCapitalize } from '@/lib/utils';
-import { setTheme, deleteTheme } from '@/lib/actions';
+import { setTheme, } from '@/lib/actions';
 import Cookies from 'js-cookie';
 import { useState } from 'react';
 // Type definitions

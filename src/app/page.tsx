@@ -1,12 +1,8 @@
 'use client'
-import CategoryWrapper, {Product}  from "@/components/product/ProductCardList";
-import { use, useEffect, useState, useMemo } from "react";
+import CategoryWrapper  from "@/components/product/ProductCardList";
+import { useEffect, useState } from "react";
 import { getWN } from "@/lib/utils";
-import watch from '../../public/watch.png'
-import { getUserCountry } from "@/lib/utils";
 import { organizeProductsByCategory } from "@/lib/fake-api/functions";
-import { init } from "next/dist/compiled/webpack/webpack";
-import Cookies from "js-cookie";
 
 export default function Home() {
   const [lang, setLang] = useState('en-US')

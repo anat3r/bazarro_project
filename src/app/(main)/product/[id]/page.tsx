@@ -1,20 +1,21 @@
 // app/product/[id]/page.tsx
+'use client'
 import React from 'react';
+import { use } from 'react';
 import Image from 'next/image';
-import { notFound } from 'next/navigation';
+import { notFound, useParams } from 'next/navigation';
 import { TruckIcon,  } from '@/components/iconsSVG/icons';
 import { getProduct } from '@/lib/fake-api/functions';
 import watch from '@/../public/watch.png';
 import headphones from '@/../public/headphones.png';
 import { localCapitalize } from '@/lib/utils';
-interface ProductPageProps {
-  params: { id: string };
-}
 
 
 
-export default async function ProductPage({ params }: ProductPageProps) {
-  const product = await getProduct(params.id);
+
+export default function ProductPage() {
+  const params = useParams<{id: string}>()
+  const product = use(getProduct(params.id))
   const category = localCapitalize(product?.category_id?.trim()?.replace('cat_', '')?.split('_')[0] || "Default")
   const sub_category = localCapitalize(product?.category_id?.trim()?.replace('cat_', '')?.split('_')[1] || "Default")
   if (!product) return notFound();

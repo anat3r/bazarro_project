@@ -5,7 +5,7 @@ import { StaticImageData } from 'next/image';
 import { InfoIcon } from '@/components/iconsSVG/icons'; // Adjust the import path as necessary
 // Type definitions
 interface ProductCardProps {
-  id: number;
+  id: string;
   variant?: 'small' | 'large';
   price: number;
   currency: string;

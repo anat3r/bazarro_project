@@ -11,13 +11,13 @@ import { useState, useRef } from 'react';
 import { organizeProductsByCategory } from "@/lib/fake-api/functions";
 import Cookies from "js-cookie";
 import { setTheme } from "@/lib/actions";
-
 export type HeaderWrapperProps = HTMLAttributes<HTMLDivElement>;
 
 export const HeaderWrapper = ({ className, ...props }: HeaderWrapperProps) => {
-  const [categories, setCategories] = useState(organizeProductsByCategory('EN', '$').map((el) => el.categoryName))
-  const { width, height } = useWindowSize();
-
+  const [categories,] = useState(organizeProductsByCategory('EN', '$').map((el) => el.categoryName))
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { width, height } = window || false ? useWindowSize(window) : {width: 1000, height: 1000}; 
+  console.log(width, height);
   return (
     <div
       className={`
@@ -122,7 +122,6 @@ const SearchSection = ({ categories }: SearchSectionProps) => {
             className="w-full px-4 py-2.5 flex justify-between items-center gap-1"
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             aria-haspopup="listbox"
-            aria-expanded={isDropdownOpen}
           >
             <span className="text-[var(--text-color)] text-sm font-['Lato']">
               {selectedCategory || 'Select Category'}
@@ -133,7 +132,6 @@ const SearchSection = ({ categories }: SearchSectionProps) => {
           {isDropdownOpen && (
             <ul
               className="absolute z-100  w-full mt-1 bg-[var(--elements-bg)] border-1 border-[var(--border-color)]"
-              role="listbox"
             >
               {categories.map((category) => (
                 <li
@@ -143,8 +141,6 @@ const SearchSection = ({ categories }: SearchSectionProps) => {
                     setSelectedCategory(category);
                     setIsDropdownOpen(false);
                   }}
-                  role="option"
-                  aria-selected={selectedCategory === category}
                 >
                   <span className="text-[var(--text-color)] text-sm font-['Lato']">
                     {category}
@@ -205,8 +201,6 @@ const AccountSection = ({ windowWidth }: { windowWidth: number }) => {
               onMouseLeave={handleMouseLeave}
             >
               <TruckIcon
-                className={`hover:text-[var(--site-color)] transition-colors ${activePopup === 'parcels' ? 'text-[var(--site-color)]' : ''
-                  }`}
                 color="currentColor"
               />
               {activePopup === 'parcels' && (
@@ -228,8 +222,6 @@ const AccountSection = ({ windowWidth }: { windowWidth: number }) => {
               onMouseLeave={handleMouseLeave}
             >
               <MailIcon
-                className={`hover:text-[var(--site-color)] transition-colors ${activePopup === 'messages' ? 'text-[var(--site-color)]' : ''
-                  }`}
                 color="currentColor"
               />
               {activePopup === 'messages' && (
@@ -244,10 +236,10 @@ const AccountSection = ({ windowWidth }: { windowWidth: number }) => {
             </div>
 
             {/* Other Icons */}
-            <BagIcon className="hover:text-[var(--site-color)] transition-colors" color="var(--icons-color)" />
-            <HeartIcon className="hover:text-[var(--site-color)] transition-colors" color="var(--icons-color)" />
+            <BagIcon color="var(--icons-color)" />
+            <HeartIcon color="var(--icons-color)" />
             <div className="relative cursor-pointer" onClick={themeHandler}>
-              <EyeIcon className="hover:text-[var(--site-color)] transition-colors" color="var(--icons-color)" />
+              <EyeIcon color="var(--icons-color)" />
             </div>
           </div>
 

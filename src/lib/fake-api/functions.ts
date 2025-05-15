@@ -1,9 +1,9 @@
 import data from './data/data.json'; 
 import watch from '../../../public/watch.png';
 import headphones from '../../../public/headphones.png';
-interface Product {
-  id: number;
-  variant?: 'small' | 'large';
+import { StaticImageData } from 'next/image';
+export interface Product {
+  id: string;
   price: number;
   currency: string;
   title: string;
@@ -12,6 +12,7 @@ interface Product {
 }
 
 export async function getProduct(id: string) {
+  // В реальном приложении здесь будет запрос к API
   const products = (await import('@/lib/fake-api/data/data.json')).products;
   return products.find(product => product.product_id === id);
 }
@@ -21,7 +22,7 @@ function organizeProductsByCategory(userCountry: string = 'PL', currency: string
   products: Product[];
 }[] {
   const today = new Date();
-  const categoriesMap: { [key: string]: Array<object> } = {};
+  const categoriesMap: { [key: string]: Array<Product> } = {};
 
   // Initialize categories structure
   data.categories.forEach((category) => {
@@ -88,7 +89,10 @@ function organizeProductsByCategory(userCountry: string = 'PL', currency: string
     }
     categoriesMap[categoryName].push(productEntry);
   });
-  const categories = Object.entries(categoriesMap).map(([categoryName, products]) => {
+  const categories: {
+    categoryName: string;
+    products: Product[];
+  }[]  = Object.entries(categoriesMap).map(([categoryName, products]) => {
     if (products.length === 0) return null; // Skip empty categories
     return {
       categoryName,
