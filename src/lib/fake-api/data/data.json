@@ -1,0 +1,677 @@
+{
+  "warehouses": [
+    {
+      "warehouse_id": "wh_soundmaster",
+      "name": "SoundMaster Central Warehouse",
+      "country": "Poland",
+      "region": "Mazovia",
+      "city": "Warsaw",
+      "postal_code": "00-001",
+      "producer": "SoundMaster",
+      "carriers_supported": [
+        "carrier_dpd",
+        "carrier_inpost"
+      ]
+    },
+    {
+      "warehouse_id": "wh_timecraft",
+      "name": "TimeCraft Poland Distribution",
+      "country": "Poland",
+      "region": "Lesser Poland",
+      "city": "Kraków",
+      "postal_code": "30-001",
+      "producer": "TimeCraft",
+      "carriers_supported": [
+        "carrier_dhl",
+        "carrier_inpost"
+      ]
+    },
+    {
+      "warehouse_id": "wh_audioguru",
+      "name": "AudioGuru PL Hub",
+      "country": "Poland",
+      "region": "Silesia",
+      "city": "Katowice",
+      "postal_code": "40-001",
+      "producer": "AudioGuru",
+      "carriers_supported": [
+        "carrier_dhl",
+        "carrier_dpd"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "product_id": "0", 
+      "title": "SoundMaster Pro X",
+      "description": "Flagship over-ear headphones with ANC",
+      "price": 799.99,
+      "original_price": 899.99,
+      "brand_id": "brand_soundmaster",
+      "warehouse_id": "wh_soundmaster",
+      "category_id": "cat_headphones_overear",
+      "condition_id": "cond_new",
+      "is_available": true,
+      "images": [
+        "headph1.jpg",
+        "headph1_alt.jpg"
+      ],
+      "attributes": [
+        {
+          "key": "Color",
+          "value": "Matte Black"
+        },
+        {
+          "key": "Battery Life",
+          "value": "40h"
+        },
+        {
+          "key": "Bluetooth",
+          "value": "5.2"
+        }
+      ],
+      "delivery_terms": [
+        {
+          "delivery_term_id": "dt_h1_pl",
+          "carrier_id": "carrier_dpd",
+          "destination_country": "PL",
+          "min_days": 1,
+          "max_days": 2,
+          "cost": 0.00
+        }
+      ]
+    },
+    {
+      "product_id": "1",
+      "title": "SoundMaster Lite",
+      "description": "Lightweight on-ear headphones",
+      "price": 349.99,
+      "brand_id": "brand_soundmaster",
+      "warehouse_id": "wh_soundmaster",
+      "category_id": "cat_headphones_overear",
+      "condition_id": "cond_new",
+      "is_available": true,
+      "images": [
+        "headph2.jpg"
+      ],
+      "attributes": [
+        {
+          "key": "Color",
+          "value": "White"
+        },
+        {
+          "key": "Weight",
+          "value": "180g"
+        }
+      ],
+      "delivery_terms": [
+        {
+          "delivery_term_id": "dt_h2_pl",
+          "carrier_id": "carrier_inpost",
+          "destination_country": "PL",
+          "min_days": 2,
+          "max_days": 3,
+          "cost": 9.99
+        }
+      ]
+    },
+    {
+      "product_id": "2" ,
+      "title": "SoundMaster Bass+",
+      "description": "In-ear headphones with enhanced bass",
+      "price": 199.99,
+      "brand_id": "brand_soundmaster",
+      "warehouse_id": "wh_soundmaster",
+      "category_id": "cat_headphones_inear",
+      "condition_id": "cond_new",
+      "is_available": true,
+      "images": [
+        "headph3.jpg"
+      ],
+      "attributes": [
+        {
+          "key": "Color",
+          "value": "Blue"
+        },
+        {
+          "key": "Waterproof",
+          "value": "IPX5"
+        }
+      ],
+      "delivery_terms": [
+        {
+          "delivery_term_id": "dt_h3_pl",
+          "carrier_id": "carrier_dpd",
+          "destination_country": "PL",
+          "min_days": 1,
+          "max_days": 2,
+          "cost": 5.99
+        }
+      ]
+    },
+    {
+      "product_id": "3" ,
+      "title": "SoundMaster Travel",
+      "description": "Foldable noise-cancelling headphones",
+      "price": 499.99,
+      "brand_id": "brand_soundmaster",
+      "warehouse_id": "wh_soundmaster",
+      "category_id": "cat_headphones_overear",
+      "condition_id": "cond_new",
+      "is_available": true,
+      "images": [
+        "headph1.jpg"
+      ],
+      "attributes": [
+        {
+          "key": "Color",
+          "value": "Silver"
+        },
+        {
+          "key": "Case Included",
+          "value": "Yes"
+        }
+      ],
+      "delivery_terms": [
+        {
+          "delivery_term_id": "dt_h4_pl",
+          "carrier_id": "carrier_dhl",
+          "destination_country": "PL",
+          "min_days": 1,
+          "max_days": 1,
+          "cost": 0.00
+        }
+      ]
+    },
+    {
+      "product_id": "4" ,
+      "title": "SoundMaster Studio Pro",
+      "description": "Professional studio monitoring headphones",
+      "price": 599.99,
+      "brand_id": "brand_soundmaster",
+      "warehouse_id": "wh_soundmaster",
+      "category_id": "cat_headphones_overear",
+      "condition_id": "cond_new",
+      "is_available": true,
+      "images": [
+        "headph2.jpg"
+      ],
+      "attributes": [
+        {
+          "key": "Color",
+          "value": "Black"
+        },
+        {
+          "key": "Impedance",
+          "value": "64Ω"
+        }
+      ],
+      "delivery_terms": [
+        {
+          "delivery_term_id": "dt_h5_pl",
+          "carrier_id": "carrier_dpd",
+          "destination_country": "PL",
+          "min_days": 2,
+          "max_days": 3,
+          "cost": 0.00
+        }
+      ]
+    },
+    {
+      "product_id": "5" ,
+      "title": "TimeCraft Chrono Elite",
+      "description": "Swiss automatic chronograph",
+      "price": 2499.99,
+      "brand_id": "brand_timecraft",
+      "warehouse_id": "wh_timecraft",
+      "category_id": "cat_watches_mechanical",
+      "condition_id": "cond_new",
+      "is_available": true,
+      "images": [
+        "watch1.jpg"
+      ],
+      "attributes": [
+        {
+          "key": "Material",
+          "value": "Stainless Steel"
+        },
+        {
+          "key": "Movement",
+          "value": "Automatic"
+        }
+      ],
+      "delivery_terms": [
+        {
+          "delivery_term_id": "dt_w1_pl",
+          "carrier_id": "carrier_dhl",
+          "destination_country": "PL",
+          "min_days": 2,
+          "max_days": 3,
+          "cost": 19.99
+        }
+      ]
+    },
+    {
+      "product_id": "6" ,
+      "title": "TimeCraft Sport X",
+      "description": "GPS smartwatch with heart rate monitor",
+      "price": 899.99,
+      "brand_id": "brand_timecraft",
+      "warehouse_id": "wh_timecraft",
+      "category_id": "cat_watches_smart",
+      "condition_id": "cond_new",
+      "is_available": true,
+      "images": [
+        "watch2.jpg"
+      ],
+      "attributes": [
+        {
+          "key": "Color",
+          "value": "Black"
+        },
+        {
+          "key": "Battery Life",
+          "value": "7 days"
+        }
+      ],
+      "delivery_terms": [
+        {
+          "delivery_term_id": "dt_w2_pl",
+          "carrier_id": "carrier_inpost",
+          "destination_country": "PL",
+          "min_days": 1,
+          "max_days": 2,
+          "cost": 0.00
+        }
+      ]
+    },
+    {
+      "product_id": "7" ,
+      "title": "TimeCraft Classic",
+      "description": "Handcrafted leather dress watch",
+      "price": 1299.99,
+      "brand_id": "brand_timecraft",
+      "warehouse_id": "wh_timecraft",
+      "category_id": "cat_watches_mechanical",
+      "condition_id": "cond_new",
+      "is_available": true,
+      "images": [
+        "watch3.jpg"
+      ],
+      "attributes": [
+        {
+          "key": "Material",
+          "value": "Genuine Leather"
+        },
+        {
+          "key": "Water Resistance",
+          "value": "30m"
+        }
+      ],
+      "delivery_terms": [
+        {
+          "delivery_term_id": "dt_w3_pl",
+          "carrier_id": "carrier_dpd",
+          "destination_country": "PL",
+          "min_days": 3,
+          "max_days": 5,
+          "cost": 12.50
+        }
+      ]
+    },
+    {
+      "product_id": "8" ,
+      "title": "TimeCraft Diver 300",
+      "description": "Professional diving watch",
+      "price": 1799.99,
+      "brand_id": "brand_timecraft",
+      "warehouse_id": "wh_timecraft",
+      "category_id": "cat_watches_mechanical",
+      "condition_id": "cond_new",
+      "is_available": true,
+      "images": [
+        "watch1.jpg"
+      ],
+      "attributes": [
+        {
+          "key": "Water Resistance",
+          "value": "300m"
+        },
+        {
+          "key": "Luminescence",
+          "value": "Super-LumiNova"
+        }
+      ],
+      "delivery_terms": [
+        {
+          "delivery_term_id": "dt_w4_pl",
+          "carrier_id": "carrier_dhl",
+          "destination_country": "PL",
+          "min_days": 1,
+          "max_days": 2,
+          "cost": 0.00
+        }
+      ]
+    },
+    {
+      "product_id": "9" ,
+      "title": "TimeCraft Solar",
+      "description": "Eco-friendly solar-powered watch",
+      "price": 699.99,
+      "brand_id": "brand_timecraft",
+      "warehouse_id": "wh_timecraft",
+      "category_id": "cat_watches_mechanical",
+      "condition_id": "cond_new",
+      "is_available": true,
+      "images": [
+        "watch2.jpg"
+      ],
+      "attributes": [
+        {
+          "key": "Power Source",
+          "value": "Solar"
+        },
+        {
+          "key": "Accuracy",
+          "value": "±10 sec/month"
+        }
+      ],
+      "delivery_terms": [
+        {
+          "delivery_term_id": "dt_w5_pl",
+          "carrier_id": "carrier_inpost",
+          "destination_country": "PL",
+          "min_days": 2,
+          "max_days": 4,
+          "cost": 8.99
+        }
+      ]
+    },
+    {
+      "product_id": "10" ,
+      "title": "AudioGuru BassBuds",
+      "description": "Wireless earbuds with deep bass",
+      "price": 199.99,
+      "brand_id": "brand_audioguru",
+      "warehouse_id": "wh_audioguru",
+      "category_id": "cat_headphones_inear",
+      "condition_id": "cond_new",
+      "is_available": true,
+      "images": [
+        "headph3.jpg"
+      ],
+      "attributes": [
+        {
+          "key": "Color",
+          "value": "Red"
+        },
+        {
+          "key": "Bluetooth",
+          "value": "5.0"
+        }
+      ],
+      "delivery_terms": [
+        {
+          "delivery_term_id": "dt_h6_pl",
+          "carrier_id": "carrier_dpd",
+          "destination_country": "PL",
+          "min_days": 2,
+          "max_days": 3,
+          "cost": 7.50
+        }
+      ]
+    },
+    {
+      "product_id": "11" ,
+      "title": "AudioGuru Quantum",
+      "description": "True wireless ANC earbuds",
+      "price": 349.99,
+      "brand_id": "brand_audioguru",
+      "warehouse_id": "wh_audioguru",
+      "category_id": "cat_headphones_inear",
+      "condition_id": "cond_new",
+      "is_available": true,
+      "images": [
+        "headph1.jpg"
+      ],
+      "attributes": [
+        {
+          "key": "Color",
+          "value": "Black"
+        },
+        {
+          "key": "ANC",
+          "value": "Yes"
+        }
+      ],
+      "delivery_terms": [
+        {
+          "delivery_term_id": "dt_h7_pl",
+          "carrier_id": "carrier_dhl",
+          "destination_country": "PL",
+          "min_days": 1,
+          "max_days": 1,
+          "cost": 0.00
+        }
+      ]
+    },
+    {
+      "product_id": "12" ,
+      "title": "AudioGuru Studio Pro",
+      "description": "Professional studio headphones",
+      "price": 449.99,
+      "brand_id": "brand_audioguru",
+      "warehouse_id": "wh_audioguru",
+      "category_id": "cat_headphones_overear",
+      "condition_id": "cond_new",
+      "is_available": true,
+      "images": [
+        "headph2.jpg"
+      ],
+      "attributes": [
+        {
+          "key": "Color",
+          "value": "Black"
+        },
+        {
+          "key": "Impedance",
+          "value": "32Ω"
+        }
+      ],
+      "delivery_terms": [
+        {
+          "delivery_term_id": "dt_h8_pl",
+          "carrier_id": "carrier_inpost",
+          "destination_country": "PL",
+          "min_days": 3,
+          "max_days": 5,
+          "cost": 9.99
+        }
+      ]
+    },
+    {
+      "product_id": "13" ,
+      "title": "AudioGuru Travel Lite",
+      "description": "Foldable wireless headphones",
+      "price": 279.99,
+      "brand_id": "brand_audioguru",
+      "warehouse_id": "wh_audioguru",
+      "category_id": "cat_headphones_overear",
+      "condition_id": "cond_new",
+      "is_available": true,
+      "images": [
+        "headph3.jpg"
+      ],
+      "attributes": [
+        {
+          "key": "Color",
+          "value": "Blue"
+        },
+        {
+          "key": "Weight",
+          "value": "210g"
+        }
+      ],
+      "delivery_terms": [
+        {
+          "delivery_term_id": "dt_h9_pl",
+          "carrier_id": "carrier_dpd",
+          "destination_country": "PL",
+          "min_days": 2,
+          "max_days": 4,
+          "cost": 5.99
+        }
+      ]
+    },
+    {
+      "product_id": "14" ,
+      "title": "AudioGuru Sport Pulse",
+      "description": "Sweatproof sports earbuds",
+      "price": 129.99,
+      "brand_id": "brand_audioguru",
+      "warehouse_id": "wh_audioguru",
+      "category_id": "cat_headphones_inear",
+      "condition_id": "cond_new",
+      "is_available": true,
+      "images": [
+        "headph1.jpg"
+      ],
+      "attributes": [
+        {
+          "key": "Color",
+          "value": "Green"
+        },
+        {
+          "key": "Waterproof",
+          "value": "IPX7"
+        }
+      ],
+      "delivery_terms": [
+        {
+          "delivery_term_id": "dt_h10_pl",
+          "carrier_id": "carrier_inpost",
+          "destination_country": "PL",
+          "min_days": 1,
+          "max_days": 3,
+          "cost": 0.00
+        }
+      ]
+    },
+    {
+      "product_id": "15" ,
+      "title": "SonicWave Ultra",
+      "description": "Premium over-ear ANC headphones",
+      "price": 599.99,
+      "brand_id": "brand_sonicwave",
+      "warehouse_id": "wh_sonicwave",
+      "category_id": "cat_headphones_overear",
+      "condition_id": "cond_new",
+      "is_available": true,
+      "images": [
+        "headph2.jpg"
+      ],
+      "attributes": [
+        {
+          "key": "Color",
+          "value": "Silver"
+        },
+        {
+          "key": "ANC Modes",
+          "value": "3"
+        }
+      ],
+      "delivery_terms": [
+        {
+          "delivery_term_id": "dt_h11_pl",
+          "carrier_id": "carrier_dhl",
+          "destination_country": "PL",
+          "min_days": 1,
+          "max_days": 2,
+          "cost": 0.00
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category_id": "cat_headphones",
+      "name": "Headphones",
+      "subcategories": [
+        {
+          "category_id": "cat_headphones_overear",
+          "name": "Over-Ear"
+        },
+        {
+          "category_id": "cat_headphones_inear",
+          "name": "In-Ear"
+        }
+      ]
+    },
+    {
+      "category_id": "cat_watches",
+      "name": "Watches",
+      "subcategories": [
+        {
+          "category_id": "cat_watches_mechanical",
+          "name": "Mechanical"
+        },
+        {
+          "category_id": "cat_watches_smart",
+          "name": "Smartwatches"
+        }
+      ]
+    }
+  ],
+  "brands": [
+    {
+      "brand_id": "brand_soundmaster",
+      "name": "SoundMaster",
+      "logo_url": "soundmaster_logo.png",
+      "warehouse_id": "wh_soundmaster"
+    },
+    {
+      "brand_id": "brand_timecraft",
+      "name": "TimeCraft",
+      "logo_url": "timecraft_logo.png",
+      "warehouse_id": "wh_timecraft"
+    }
+  ],
+  "carriers": [
+    {
+      "carrier_id": "carrier_dpd",
+      "name": "DPD Poland",
+      "domestic_cost": 9.50,
+      "delivery_sla_days": 2
+    },
+    {
+      "carrier_id": "carrier_dhl",
+      "name": "DHL Express",
+      "domestic_cost": 12.50,
+      "delivery_sla_days": 1
+    }
+  ],
+  "conditions": [
+    {
+      "condition_id": "cond_new",
+      "label": "New",
+      "description": "Brand new, factory sealed"
+    },
+    {
+      "condition_id": "cond_refurb",
+      "label": "Refurbished",
+      "description": "Professionally restored"
+    }
+  ],
+  "promotions": [
+    {
+      "promo_id": "promo_audio2025",
+      "name": "Audio Sale 2025",
+      "discount_percent": 15,
+      "applicable_category_ids": [
+        "cat_headphones"
+      ],
+      "start_date": "2025-05-01",
+      "end_date": "2025-05-31"
+    }
+  ]
+}

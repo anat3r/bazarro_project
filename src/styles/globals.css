@@ -30,43 +30,8 @@
   border: 0.5rem solid var(--border-color);
 }
 
-
-@media (max-width:1420px) {
-  :root{
-    font-size: 14px;
-  }
-}
-@media (max-width:1000px) {
-  :root {
-    font-size: 12px;
-  }
-}
-@media (max-width:600px) {
-  :root {
-    font-size: 6px;
-  }
-}
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --border-color: #FFD700;
-      --page-bg: #000000;
-      --elements-bg: #222222;
-      --text-color: #FFFFFF;
-      --contrast-color: #45E87E;
-      --icons-color: #FFFFFF;
-    }
-  }
-
 body {
-  background-color: var(--page-bg);
-  color: var(--text-color);
+
 }
 
 .product-card {
@@ -81,4 +46,74 @@ body {
 .contrast-text {
   color: var(--contrast-color);
 }
+  body, body.ligth-theme {
+    font-size: 16px;
+    --border-color: #949494;
+    --page-bg: #E2E2E2;
+    --elements-bg: #FFFFFF;
+    --text-color: #000000;
+    --contrast-color: #124E72;
+    --icons-color: #585858;
+    --site-color: #FF5A00;
+    background-color: var(--page-bg);
+    color: var(--text-color);
+  }
+  body.dark-theme {
+    --border-color: #FFD700;
+    --page-bg: #000000;
+    --elements-bg: #222222;
+    --text-color: #FFFFFF;
+    --contrast-color: #45E87E;
+    --icons-color: #E2E2E2;
+    background-color: var(--page-bg);
+    color: var(--text-color);
+  }
+  @media (prefers-color-scheme: dark) {
+    body.browser-theme {
+        --border-color: #FFD700;
+        --page-bg: #000000;
+        --elements-bg: #222222;
+        --text-color: #FFFFFF;
+        --contrast-color: #45E87E;
+        --icons-color: #E2E2E2; 
+        background-color: var(--page-bg);
+        color: var(--text-color);
+      }
+  }
+  @media (prefers-color-scheme: ligth) {
+    body.browser-theme {
+      --border-color: #949494;
+      --page-bg: #E2E2E2;
+      --elements-bg: #FFFFFF;
+      --text-color: #000000;
+      --contrast-color: #124E72;
+      --icons-color: #585858;
+      --site-color: #FF5A00;
+      background-color: var(--page-bg);
+      color: var(--text-color);
+    }
+  }
+@media screen and (max-width:1420px) {
+  :root {
+    font-size: 14px;
+  }
+}
 
+@media screen and (max-width:1000px) {  
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width:600px) {
+  :root {
+    font-size: 6px;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
