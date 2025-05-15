@@ -15,7 +15,7 @@ interface ProductCardProps {
 }
 
 // Product Card Component
-const ProductCard: React.FC<ProductCardProps> = ({
+export const ProductCard: React.FC<ProductCardProps> = ({
   id,
   variant = 'large',
   price,
