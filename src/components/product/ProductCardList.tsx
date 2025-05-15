@@ -1,6 +1,6 @@
 import React from 'react';
-/* import ProductCard from './ProductCard'; */
-import TestCard from './TestCard';
+
+import { ProductCard } from './ProductCard';
 import { Product } from '@/lib/fake-api/functions';
 
 interface CategoryWrapperProps {
@@ -31,7 +31,7 @@ const CategoryWrapper: React.FC<CategoryWrapperProps> = ({ categoryName, product
           <div className="self-stretch flex justify-start items-start gap-2 overflow-x-auto pb-4">
             {productsList.map((product) => (
               <div key={+product.id} className="flex-shrink-0">
-{/*                 <ProductCard
+                <ProductCard
                   id={`${product.id}`}
                   variant={variant || 'large'}
                   price={product.price}
@@ -39,7 +39,7 @@ const CategoryWrapper: React.FC<CategoryWrapperProps> = ({ categoryName, product
                   title={product.title}
                   deliveryDate={weekdays[product.deliveryDate.getDay()]}
                   imageUrl={product.imageUrl}
-                /> */}
+                />
               </div>
             ))}
           </div>
