@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductCard from './ProductCard'; // Assuming ProductCard is in the same directory
+import ProductCard from '@/components/product/ProductCard';
 import { Product } from '@/lib/fake-api/functions';
 
 interface CategoryWrapperProps {
